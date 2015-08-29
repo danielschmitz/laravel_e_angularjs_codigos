@@ -1,0 +1,24 @@
+
+Virtual host dos exemplos do livro (windows)
+
+<VirtualHost *>
+    ServerName mysite.com
+    DocumentRoot "c:/wamp/www/mysite"
+    <Directory "c:/wamp/www/mysite">
+        Options FollowSymLinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *>
+ServerName blog.com
+DocumentRoot "c:/wamp/www/blog/public"
+    <Directory "c:/wamp/www/blog/public">
+        Options FollowSymLinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
