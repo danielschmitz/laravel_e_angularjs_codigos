@@ -1,0 +1,65 @@
+<h2>Novo usuário</h2>
+
+<form name="form" novalidate>
+  
+  <div class="form-group" 
+      ng-class="{ 'has-error': (form.$submitted  || form.email.$dirty) 
+          && form.email.$invalid }">
+    <label for="email">Email</label>
+    <input ng-model="user.email" type="email" class="form-control" 
+            id="email" name="email" placeholder="Email" required>
+    <span class="label label-danger" ng-show="(form.$submitted  || form.email.$dirty) 
+        && form.email.$invalid">
+      <span ng-show="form.email.$error.required">Campo obrigatório</span>
+      <span ng-show="form.email.$error.email">Email inválido</span>
+    </span>
+  </div>
+
+  <div class="form-group" 
+              ng-class="{ 'has-error':(form.$submitted  || form.password.$dirty) 
+      && form.password.$invalid }">
+    <label for="password">Senha</label>
+    <input ng-model="user.password" type="password" class="form-control" 
+      id="password" name="password" placeholder="Senha" required>
+    <span class="label label-danger" 
+          ng-show="(form.$submitted  || form.password.$dirty) 
+      && form.password.$invalid">
+      <span ng-show="form.password.$error.required">Campo obrigatório</span>
+    </span>
+  </div>
+
+    <div class="form-group" 
+              ng-class="{ 'has-error':(form.$submitted  || form.password2.$dirty) 
+      && form.password2.$invalid }">
+    <label for="password2">Repita a Senha</label>
+    <input ng-model="user.password2" type="password" class="form-control" 
+      id="password2" name="password2" placeholder="Senha" required compare-to="user.password">
+    <span class="label label-danger" 
+          ng-show="(form.$submitted  || form.password2.$dirty) 
+      && form.password2.$invalid">
+      <span ng-show="form.password2.$error.required" >Campo obrigatório</span>
+      <span ng-show="form.password2.$error.compareTo">Senha não confere</span>
+    </span>
+  </div>
+
+      <div class="form-group" 
+              ng-class="{ 'has-error':(form.$submitted  || form.name.$dirty) 
+      && form.name.$invalid }">
+    <label for="name">Seu Nome</label>
+    <input ng-model="user.name" type="text" class="form-control" 
+      id="name" name="name" placeholder="Senha" required>
+    <span class="label label-danger" 
+          ng-show="(form.$submitted  || form.name.$dirty) 
+      && form.name.$invalid">
+      <span ng-show="form.name.$error.required">Campo obrigatório</span>
+    </span>
+  </div>
+
+  <div class="form-group pull-right">
+    <button type="submit" class="btn btn-primary" 
+                                    ng-click="createUser()">Criar</button>
+  </div>
+  <div class="form-group">
+                                                    <a href="#/">Voltar</a>
+  </div>
+</form>

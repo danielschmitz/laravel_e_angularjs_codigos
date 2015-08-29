@@ -1,0 +1,8 @@
+<h2>Tags</h2>
+<div ng-repeat="tag in tags">
+    <h3>{{tag.title}}</h3>
+    <p>
+        <span ng-repeat="post in tag.posts" class="label label-primary tag">{{post.title}}</span>
+    </p>
+    <hr/>
+</div>

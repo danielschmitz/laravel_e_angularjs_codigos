@@ -1,0 +1,61 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/bootswatch-dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Forms</h1>
+
+        <h2>Form 1</h2>
+        <form name="form1">
+            <div class="form-group" ng-class="{ 'has-error': form1.email.$invalid }" >
+                <input type="email" class="form-control" name="email" ng-model="user.email" required />
+            </div>
+        </form>
+
+    <h2>Form 2</h2>
+    <form name="form1">
+        <div class="form-group" ng-class="{ 'has-error': form2.email.$invalid &&  form2.email.$dirty}" >
+            <input type="email" class="form-control" name="email" ng-model="user.email" required />
+        </div>
+     </form>
+
+    <h2>Form 3</h2>
+    <form name="form3">
+        <div class="form-group" ng-class="{ 'has-error': form3.email.$invalid &&  form3.email.$dirty}" >
+            <input type="email" class="form-control" name="email" ng-model="user.email" required />
+             <span class="label label-danger" ng-show="form3.email.$dirty && form3.email.$invalid">
+                  <span ng-show="form3.email.$error.required">Campo obrigatório</span>
+                  <span ng-show="form3.email.$error.email">Email inválido</span>
+            </span>
+        </div>
+     </form>
+
+ <h2>Form 4</h2>
+    <form name="form4" novalidate>
+        <div class="form-group" ng-class="{ 'has-error': (form4.$submitted  || form4.email.$dirty) 
+          && form4.email.$invalid}" >
+            <input type="email" class="form-control" name="email" ng-model="user.email" required />
+             <span class="label label-danger" ng-show="(form4.$submitted  || form4.email.$dirty) 
+          && form4.email.$invalid">
+                  <span ng-show="form4.email.$error.required">Campo obrigatório</span>
+                  <span ng-show="form4.email.$error.email">Email inválido</span>
+            </span>
+        </div>
+        <button type="submit" class="btn btn-primary" 
+                                    ng-click="go()">Go</button>
+     </form>
+
+
+
+    </div>  
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<div ng-repeat="user in users">
+    <h2>{{user.name}}</h2>
+    <small class="pull-right">{{user.email}}</small>
+    <ul>
+            <li ng-repeat="post in user.posts"><a href='#/post/{{post.id}}'>{{post.title}}</a></li>
+    </ul>
+    <hr/>
+</div>

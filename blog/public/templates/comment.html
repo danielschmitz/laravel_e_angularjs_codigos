@@ -1,0 +1,7 @@
+<h2>Comentários</h2>
+<div ng-repeat="comment in comments">
+    <h3>{{comment.post.title}}</h3>
+    <blockquote>{{comment.text}}</blockquote>
+    <small class="badge">by {{comment.email}}</small>
+    <hr/>
+</div>

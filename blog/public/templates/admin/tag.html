@@ -1,0 +1,47 @@
+<h2>{{title}}</h2>
+
+<div ng-show="row==null">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Atualizado em:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in rows">
+                <th >{{row.id}}</th>
+                <td><a href="#/tag" ng-click="getById(row.id)">{{row.title}}</td>
+                <td>{{ row.updated_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#/tag" class="btn btn-primary" ng-click="createNew()">Novo</a>
+</div>
+
+<div ng-show="row!=null">
+
+    <form name="form" novalidate>
+
+        <div class="form-group" 
+        ng-class="{ 'has-error': (form.$submitted  || form.title.$dirty) 
+        && form.title.$invalid }">
+        <label for="title">Título</label>
+        <input ng-model="row.title" type="text" class="form-control" 
+        id="title" name="title" placeholder="Título" required>
+        <span class="label label-danger" ng-show="(form.$submitted  || form.title.$dirty) 
+        && form.title.$invalid">
+        <span ng-show="form.title.$error.required">Campo obrigatório</span>
+    </span>
+
+</div>
+<div class="form-group ">
+    <button type="submit" class="btn" 
+    ng-click="loadAll()">Voltar</button>
+    <button type="submit" class="btn btn-primary pull-right" 
+    ng-click="save()">Salvar</button>
+</div>
+</form>
+
+</div>

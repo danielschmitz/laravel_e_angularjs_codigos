@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="app">
+    <head>
+        <title>Hello Counter</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+        <script type="text/javaScript">
+            var app = angular.module('app', []);
+            app.controller('loopController', function ($scope) {
+                $scope.fruits = ['banana','apple','orange'];
+            });
+        </script>
+    </head>
+    <body ng-controller="loopController">
+        <ul>
+            <li ng-repeat="fruit in fruits">{{fruit}}</li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">┘
+    <link rel="stylesheet" 
+      href="bower_components/bootswatch-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" 
+      href="bower_components/bootstrap-notify/css/bootstrap-notify.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <title> Admin - Meu Blog </title>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" 
+          data-toggle="collapse" data-target="#navbar" aria-expanded="false" 
+          aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Admin - Blog.com</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+      <li ><a href="#/">Home</a></li>
+          <li><a href="#/post">Posts</a></li>
+          <li><a href="#/tag">Tags</a></li>
+          <li><a href="#/comment">Comments</a></li>
+          <li><a href="#/user">Users</a></li>
+          <li><a href="#/profile">Profile</a></li>
+          <li><a href="#/logout">Sair</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+         <li ><a href="#/">Home</a></li>
+          <li><a href="#/post">Posts</a></li>
+          <li><a href="#/tag">Tags</a></li>
+          <li><a href="#/comment">Comments</a></li>
+          <li><a href="#/user">Users</a></li>
+          <li><a href="#/profile">Profile</a></li>
+          <li><a href="#/logout">Sair</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-2 main" ng-view>
+            
+        </div>
+      </div>
+    </div>    
+
+    <div class='notifications bottom-right'></div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/bootstrap-notify/js/bootstrap-notify.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+
+    <script src="js/base.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

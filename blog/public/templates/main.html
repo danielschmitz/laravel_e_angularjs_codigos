@@ -1,0 +1,18 @@
+<div ng-repeat="post in posts">
+    <h2>{{post.title}}<small class="pull-right">por {{post.user.name}}</small></h2>
+    <p>
+        {{post.text}} 
+
+        <br/>
+        <a href="#/post/{{post.id}}">Mais</a>
+
+        <span ng-init="lengthComments = post.comments.length">
+        <a ng-show="lengthComments>0" class="pull-right" href="#/post/{{post.id}}"> {{lengthComments}} comentário{{ lengthComments != 1 ? 's' : ''}} </a>
+        </span>
+
+        <p class="text-right">
+            <span ng-repeat="tag in post.tags" class="label label-primary tag">{{tag.title}}</span>
+        </p>
+        <hr/>
+    </p>
+</div>

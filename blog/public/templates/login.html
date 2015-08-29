@@ -1,0 +1,38 @@
+<h2>Login</h2>
+
+<form name="form" novalidate>
+  
+  <div class="form-group" 
+      ng-class="{ 'has-error': (form.$submitted  || form.loginEmail.$dirty) 
+          && form.loginEmail.$invalid }">
+    <label for="loginEmail">Email</label>
+    <input ng-model="user.email" type="email" class="form-control" 
+            id="loginEmail" name="loginEmail" placeholder="Email" required>
+    <span class="label label-danger" ng-show="(form.$submitted  || form.loginEmail.$dirty) 
+        && form.loginEmail.$invalid">
+      <span ng-show="form.loginEmail.$error.required">Campo obrigatório</span>
+      <span ng-show="form.loginEmail.$error.email">Email inválido</span>
+    </span>
+  </div>
+
+  <div class="form-group" 
+              ng-class="{ 'has-error':(form.$submitted  || form.loginPassword.$dirty) 
+      && form.loginPassword.$invalid }">
+    <label for="loginPassword">Senha</label>
+    <input ng-model="user.password" type="password" class="form-control" 
+      id="loginPassword" name="loginPassword" placeholder="Senha" required>
+    <span class="label label-danger" 
+          ng-show="(form.$submitted  || form.loginPassword.$dirty) 
+      && form.loginPassword.$invalid">
+      <span ng-show="form.loginPassword.$error.required">Campo obrigatório</span>
+    </span>
+  </div>
+  <div class="form-group pull-right">
+    <button type="submit" class="btn btn-primary" 
+                                    ng-click="doLogin()">Entrar</button>
+  </div>
+  <div class="form-group">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                    <a href="#/new">Criar conta</a>
+  </div>
+</form>

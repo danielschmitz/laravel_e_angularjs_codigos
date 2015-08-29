@@ -1,0 +1,62 @@
+<h2>{{title}}</h2>
+
+<div ng-show="row==null">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Atualizado em:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in rows">
+                <th >{{row.id}}</th>
+                <td><a href="#/user" ng-click="getById(row.id)">{{row.name}}</td>
+                <td >{{row.email}}</td>
+                <td>{{ row.updated_at | date:'dd/MM/yyyy HH:mm:ss Z'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#/user" class="btn btn-primary" ng-click="createNew()">Novo</a>
+</div>
+
+<div ng-show="row!=null">
+
+    <form name="form" novalidate>
+
+        <div class="form-group" 
+        ng-class="{ 'has-error': (form.$submitted  || form.name.$dirty) 
+        && form.name.$invalid }">
+        <label for="name">Título</label>
+        <input ng-model="row.name" type="text" class="form-control" 
+        id="name" name="name" placeholder="Título" required>
+        <span class="label label-danger" ng-show="(form.$submitted  || form.name.$dirty) 
+        && form.name.$invalid">
+        <span ng-show="form.name.$error.required">Campo obrigatório</span>
+    </span>
+
+      <div class="form-group" 
+      ng-class="{ 'has-error': (form.$submitted  || form.email.$dirty) 
+          && form.email.$invalid }">
+    <label for="email">Email</label>
+    <input ng-model="row.email" type="email" class="form-control" 
+            id="email" name="email" placeholder="Email" required>
+    <span class="label label-danger" ng-show="(form.$submitted  || form.email.$dirty) 
+        && form.email.$invalid">
+      <span ng-show="form.email.$error.required">Campo obrigatório</span>
+      <span ng-show="form.email.$error.email">Email inválido</span>
+    </span>
+  </div>
+
+</div>
+<div class="form-group ">
+    <button type="submit" class="btn" 
+    ng-click="loadAll()">Voltar</button>
+    <button type="submit" class="btn btn-primary pull-right" 
+    ng-click="save()">Salvar</button>
+</div>
+</form>
+
+</div>

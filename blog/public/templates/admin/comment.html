@@ -1,0 +1,84 @@
+<h2>Comentários</h2>
+
+<h3>Posts</h3>
+<div>
+    <small>Escolha um post para exibir seus comentários</small>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Título</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="post in posts">
+                <th >{{post.id}}</th>
+                <td><a href="#/comment" ng-click="selectPost(post)">{{post.title}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div ng-show="post!=null">
+    <h3>Comentários do post <b>{{post.title}}</b></h3>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Text</th>
+                <th>Email</th>
+                <th>Active?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in rows">
+                <th ><a href="#/comment" ng-click='selectComment(row)'>{{row.id}}</a></th>
+                <td>{{row.text}}</td>
+                <td>{{row.email}}</td>
+                <td>{{row.active}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div ng-show="row!=null">
+    <h3>Editando Comentário <b>{{row.id}}</b></h3>
+    <form name="form" novalidate>
+
+        <div class="form-group" 
+        ng-class="{ 'has-error': (form.$submitted  || form.text.$dirty) 
+        && form.text.$invalid }">
+        <label for="text">Texto</label>
+        <input ng-model="row.text" type="text" class="form-control" 
+        id="text" name="text" placeholder="Texto" required>
+        <span class="label label-danger" ng-show="(form.$submitted  || form.text.$dirty) 
+        && form.text.$invalid">
+        <span ng-show="form.text.$error.required">Campo obrigatório</span>
+    </span>
+
+       <div class="form-group" 
+        ng-class="{ 'has-error': (form.$submitted  || form.email.$dirty) 
+        && form.email.$invalid }">
+        <label for="email">Email</label>
+        <input ng-model="row.email" type="email" class="form-control" 
+        id="email" name="email" placeholder="Email" required>
+        <span class="label label-danger" ng-show="(form.$submitted  || form.email.$dirty) 
+        && form.email.$invalid">
+        <span ng-show="form.email.$error.required">Campo obrigatório</span>
+        <span ng-show="form.email.$error.email">Email inválido</span>
+    </span>
+
+     <div class="form-group" >
+        <input type="checkbox"
+           ng-model="row.active"
+            ng-true-value="1"
+       ng-false-value="0"
+    > Ativo
+     </div>
+
+</div>
+<div class="form-group ">
+    <button type="submit" class="btn btn-primary pull-right" 
+    ng-click="save()">Salvar</button>
+</div>
+</form>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="app">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+        <script>
+            var app = angular.module('app', []);
+
+            app.controller('countController', function ($scope) {
+                
+                $scope.counter = 0;
+
+                $scope.addOne = function(){
+                    $scope.counter++;
+                }
+                
+            });
+        </script>
+    </head>
+    <body ng-controller="countController">
+        <a href="#" ng-click="addOne()">Add 1</a>
+        <p>Counter value: {{counter}}</p>
+        <p>or... Counter value: <span ng-bind="counter"/></p>
+        <p>or... Counter value: <input type="text" ng-model="counter"/></p>
+
+    </body>
+</html>

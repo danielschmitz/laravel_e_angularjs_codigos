@@ -1,0 +1,12 @@
++--------+----------+----------------+------+--------------------------------------------+------------+
+| Domain | Method   | URI            | Name | Action                                     | Middleware |
++--------+----------+----------------+------+--------------------------------------------+------------+
+|        | GET|HEAD | /              |      | Closure                                    |            |
+|        | GET|HEAD | user           |      | App\Http\Controllers\UserController@index  |            |
+|        | GET|HEAD | user/create    |      | App\Http\Controllers\UserController@create |            |
+|        | POST     | user           |      | App\Http\Controllers\UserController@store  |            |
+|        | GET|HEAD | user/{id}      |      | App\Http\Controllers\UserController@show   |            |
+|        | GET|HEAD | user/{id}/edit |      | App\Http\Controllers\UserController@edit   |            |
+|        | PUT      | user/{id}      |      | App\Http\Controllers\UserController@update |            |
+|        | DELETE   | user/{id}      |      | App\Http\Controllers\UserController@delete |            |
++--------+----------+----------------+------+--------------------------------------------+------------+
