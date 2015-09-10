@@ -1,0 +1,24 @@
+{
+  "name": "angularbootstrap",
+  "version": "1.0.0",
+  "homepage": "https://github.com/danielschmitz/laravelangular_codigos",
+  "authors": [
+    "Daniel Schmitz <danieljfa@gmail.com>"
+  ],
+  "description": "Projeto de teste do livro",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.4",
+    "angular-resource": "~1.4.4",
+    "bootswatch-dist": "cosmo",
+    "bootstrap": "~3.3.5"
+  }
+}
