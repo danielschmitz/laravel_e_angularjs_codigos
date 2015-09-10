@@ -21,7 +21,7 @@ Nossas atualizações abrangem a mudança de versão das tecnologias bem como no
 
 ### 1.1 (Programado para 01/10/2015)
 
-* Adicionado capítulo sobre atualizações do bower
-* Prévia para o bootstrap 4 alpha
-*
+- [x] Adicionado capítulo sobre atualizações do bower
+- [x] Prévia para o bootstrap 4 alpha
+- [ ] Os *resources* do capítulo 11 mereceram uma refatoração, sendo separados em *services* do AngularJS e injetados diretamente em cada controller. Dica de Willian Oak.
 
