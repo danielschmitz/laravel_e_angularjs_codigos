@@ -105,7 +105,7 @@ app.controller('newUserController',
         {
             'email' : $scope.user.email,
             'password' : $scope.user.password,
-            'name':$scope.user.password
+            'name':$scope.user.name
         }).then(function(response){
                             //Login+criar conta realizado, 
                             // redirecionar para pagina de posts
