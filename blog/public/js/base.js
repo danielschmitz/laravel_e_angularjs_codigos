@@ -87,3 +87,16 @@ app.service('login',function($rootScope){
 		}
 	}  
 });
+
+app.service('Post', [ '$resource', function( $resource ) {
+   return $resource("posts/:id",{},{
+        getTitles: {url:'/posts/getTitles',method:'GET',isArray:true}
+    });
+}]);
+
+app.service('Comment', [ '$resource', function( $resource ) {
+   return $resource("comments/:id",{},{
+        getByPost: {url:'/comments/post/:id',
+        			method:'GET',isArray:true}
+    });
+}]);

@@ -28,7 +28,7 @@ $http.get("/login").then(function(response){
 
 });
 
-app.controller('postController',function ($scope,login,$resource) {
+app.controller('postController',function ($scope,login,$resource, Post) {
 
    login.check();
 
@@ -42,7 +42,7 @@ app.controller('postController',function ($scope,login,$resource) {
     $scope.row = null;
 
     //Resource Tag
-    var Post = $resource("posts/:id");
+    //var Post = $resource("posts/:id");
 
     $scope.$on('$viewContentLoaded', function(){
         $scope.loadAll();
@@ -143,7 +143,7 @@ app.controller('tagController',function ($scope,$resource,login) {
     }
 });
 
-app.controller('commentController',function ($scope,$resource,login) {
+app.controller('commentController',function ($scope,$resource,login,Comment,Post) {
 
     login.check();
 
@@ -160,14 +160,14 @@ app.controller('commentController',function ($scope,$resource,login) {
     $scope.row = null;
 
     //Resource 
-    var Comment = $resource("comments/:id",{},{
-        getByPost: {url:'/comments/post/:id',method:'GET',isArray:true}
-    });
+    //var Comment = $resource("comments/:id",{},{
+    //    getByPost: //{url:'/comments/post/:id',method:'GET',isArray:true}
+    //});
 
     //Resource
-    var Post = $resource("posts/:id",{},{
-        getTitles: {url:'/posts/getTitles',method:'GET',isArray:true}
-    });
+    //var Post = $resource("posts/:id",{},{
+    //    getTitles: {url:'/posts/getTitles',method:'GET',isArray:true}
+    //});
 
     $scope.$on('$viewContentLoaded', function(){
         $scope.loadAllPosts();
