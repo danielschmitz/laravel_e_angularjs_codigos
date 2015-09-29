@@ -67,7 +67,7 @@ use Monolog\Handler\StreamHandler;
         }
         $view_log = new Logger("SQL");
         $view_log->pushHandler(
-            new StreamHandler('./../storage/logs/sql.log')
+            new StreamHandler(storage_path().'/logs/sql.log')
             );
         $view_log->addInfo($nsql?:$sql);
     }
