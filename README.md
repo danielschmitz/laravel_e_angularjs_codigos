@@ -23,5 +23,5 @@ Nossas atualizações abrangem a mudança de versão das tecnologias bem como no
 
 - [x] Adicionado capítulo sobre atualizações do bower
 - [x] Prévia para o bootstrap 4 alpha
-- [ ] Os *resources* do capítulo 11 mereceram uma refatoração, sendo separados em *services* do AngularJS e injetados diretamente em cada controller. Dica de Willian Oak.
-
+- [x] Os *resources* do capítulo 11 mereceram uma refatoração, sendo separados em *services* do AngularJS e injetados diretamente em cada controller. Dica de Willian Oak.
+- [x] Como instalar o projeto blog.com no seu sistema
