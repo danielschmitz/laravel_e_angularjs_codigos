@@ -26,3 +26,10 @@ Nossas atualizações abrangem a mudança de versão das tecnologias bem como no
 - [x] Os *resources* do capítulo 11 mereceram uma refatoração, sendo separados em *services* do AngularJS e injetados diretamente em cada controller. Dica de Willian Oak.
 - [x] Como instalar o projeto blog.com no seu sistema
 - [x] Revisão gramatical 
+ 
+### 1.2 (01/12/2015)
+- [ ] Criação de uma ACL dinâmica integrando Laravel e Angular
+- [ ] Uso do oAuth para login pelo google/facebook/twitter/github
+- [ ] Uso do 'controller as' refatorando o código do blog e removendo o uso do $scope
+
+
