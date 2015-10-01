@@ -19,7 +19,7 @@ Nossas atualizações abrangem a mudança de versão das tecnologias bem como no
 * Lançamento da obra, 100% finalizada
 * Sumário completo aqui:  https://leanpub.com/laravelangular_pt
 
-### 1.1 (Programado para 01/10/2015)
+### 1.1 (01/10/2015)
 
 - [x] Adicionado capítulo sobre atualizações do bower
 - [x] Prévia para o bootstrap 4 alpha
