@@ -1,4 +1,20 @@
-# Código fonte do livro Laravel+AngularJS
+# Laravel+AngularJS book source code
+
+This is the source code for the Laravel+AngularJS book, available at https://leanpub.com/laravelangular_pt
+
+## About the book
+
+The Laravel+Angular book presents the best of server technology with the most used javascript library of the moment. Enjoy and also discover the best of other technologies covered in this eBook, such as Bower, Bootstrap, Composer and others!
+
+## Why leanpub?
+
+leanpub is an ebook publisher with the basic principle of allowing updates to the books, so that readers have the benefit of having a constantly updated work. 
+
+Our updates include technology version changes as well as new chapters requested by the readers. If you have any suggestions, write to https://leanpub.com/laravelangular_pt/feedback
+
+portuguese:
+
+## Código fonte do livro Laravel+AngularJS
 
 Este é o código fonte do livro Laravel+AngularJS, disponível em https://leanpub.com/laravelangular_pt
 
